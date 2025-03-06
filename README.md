@@ -6,7 +6,7 @@ CAUTION: rename repo and correct ReadMe.md file
 ** What are Computer Science Style Instructions & What are expected skills (things we might have to learn) **
 
 To Do List, Gradeable Items Demostrating Skills
-- [ ] TBA
+- [ ] DIVs
 
 ---
 
