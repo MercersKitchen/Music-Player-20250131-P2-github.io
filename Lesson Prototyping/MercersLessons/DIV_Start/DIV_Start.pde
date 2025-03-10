@@ -12,12 +12,12 @@ void setup() {
   appWidth = displayWidth;
   appHeight = displayHeight;
   //
-  imageX = displayWidth*0.17;
-  imageY = displayHeight*0.20;
-  imageWidth = displayWidth*0.67;
-  imageHeight = displayHeight*0.15;
+  imageX = appWidth*0.17;
+  imageY = appHeight*0.20;
+  imageWidth = appWidth*0.67;
+  imageHeight = appHeight*0.15;
   //
-  //rect(X, Y Width, Height);
+  //rect(X, Y, Width, Height);
   //
 } //End setup
 //
