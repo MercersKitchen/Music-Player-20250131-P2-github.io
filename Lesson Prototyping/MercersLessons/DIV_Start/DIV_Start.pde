@@ -3,14 +3,13 @@
 //Library - Minim
 //
 //Global Variables
-int appWidth, appHeight;
 float imageX, imageY, imageWidth, imageHeight;
 //
 void setup() {
   //Display
   fullScreen();
-  appWidth = displayWidth;
-  appHeight = displayHeight;
+  int appWidth = displayWidth;
+  int appHeight = displayHeight;
   //
   imageX = appWidth*0.17;
   imageY = appHeight*0.20;
