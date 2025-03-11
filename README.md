@@ -1,4 +1,4 @@
-# Music-rpgra-20250131-P1-github.io
+# Music-Player-20250131-P1-github.io
 CS10 Lessons
 
 CAUTION: rename repo and correct ReadMe.md file
