@@ -20,13 +20,24 @@ void setup() {
   divY = appHeight*1/4;
   divWidth = appWidth*1/2;
   divHeight = appHeight*1/2;
-  //
-  // Play Variables
+  stopX = divX + divWidth*1/4;
+  stopY = divY + divHeight*1/4;
+  stopWidth = divWidth*1/2;
+  stopHeight = divHeight*1/2;
+  playX1 = divX + divWidth*1/4;
+  playY1 = divY + divHeight*1/4;
+  playX2 = divX + divWidth*3/4;
+  playY2 = divY + divHeight*1/2;
+  playX3 = divX + divWidth*1/4;
+  playY3 = divY + divHeight*3/4;
   //
   //DIVs
   rect(divX, divY, divWidth, divHeight);
-  rect(stopX, stopY, stopWidth, stopHeight);
-  triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
+  // Compile one shape or other
+  rect(stopX, stopY, stopWidth, stopHeight); 
+  //triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
+  //how do you draw a square in a rectangle, smaller side then smaller side / 2 from the middle
+  //how do you draw a triangle with the same dimensions as the rectangle, verticies on square
   //
 } //End setup
 //
