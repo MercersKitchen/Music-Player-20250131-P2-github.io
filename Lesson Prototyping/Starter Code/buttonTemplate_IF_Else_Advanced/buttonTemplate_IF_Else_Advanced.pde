@@ -11,6 +11,7 @@ float musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight;
 //
 void setup() {
   //Display
+  //size(); //landscape, protrait prototyping //width, height
   fullScreen(); //displayWidth, displayHeight
   int appWidth = displayWidth;
   int appHeight = displayHeight;
@@ -21,6 +22,14 @@ void setup() {
   divWidth = appWidth*1/2;
   divHeight = appHeight*1/2;
   float smallerSide = ( divWidth < divHeight ) ? divWidth : divHeight ; //Ternary Operator
+  //if () {} else {} to change X OR Y depending on smallerSide
+  if ( divWidth < divHeight ) {
+    //divWidth smaller side
+    //must CENTER or BOTTOM 
+    musicButtonX = divX;
+  } else {
+    //divHeight smaller side
+  }
   musicButtonX = divX;
   musicButtonY = divY;
   musicButtonWidth = smallerSide;

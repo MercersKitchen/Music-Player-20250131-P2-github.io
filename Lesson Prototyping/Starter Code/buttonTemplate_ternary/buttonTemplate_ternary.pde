@@ -11,6 +11,7 @@ float musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight;
 //
 void setup() {
   //Display
+  //size(); //landscape, protrait prototyping //width, height
   fullScreen(); //displayWidth, displayHeight
   int appWidth = displayWidth;
   int appHeight = displayHeight;
