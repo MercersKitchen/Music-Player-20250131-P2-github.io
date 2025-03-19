@@ -7,7 +7,7 @@
 //Global Variables
 float divX, divY, divWidth, divHeight;
 float musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight;
-float stopX, stopY, stopWidth, stopHeight;
+//Music Button Floats from 2D Shapes
 //
 void setup() {
   //Display
@@ -21,23 +21,22 @@ void setup() {
   divWidth = appWidth*1/2;
   divHeight = appHeight*1/2;
   float smallerSide = ( divWidth < divHeight ) ? divWidth : divHeight ; //Ternary Operator
-  musicButtonX = divX;
-  musicButtonY = divY;
+  musicButtonX = divX; //Produces button in the corner of DIV
+  musicButtonY = divY; //Produces button in the corner of DIV
   musicButtonWidth = smallerSide;
   musicButtonHeight = smallerSide;
-  stopX = musicButtonX;
-  stopY = musicButtonY;
-  stopWidth = musicButtonWidth*1/2;
-  stopHeight = musicButtonHeight*1/2;
   //
   //DIV: musicButtonDIV
-  //rect(X, Y, Width, Height);
-  rect(divX, divY, divWidth, divHeight);
-  rect(musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight);
+  //rect( X, Y, Width, Height );
+  //triangle( X1, Y1, X2, Y2, X3, Y3 );
+  rect( divX, divY, divWidth, divHeight );
+  rect( musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight );
   //Shapes to turn off
-  rect(stopX, stopY, stopWidth, stopHeight);
-  //PLAY
-  //FAST FORWARD
+  //rect( stopX, stopY, stopWidth, stopHeight );
+  //triangle( fastForward1X1, fastForward1Y1, fastForward1X2, fastForward1Y2, fastForward1X3, fastForward1Y3 );
+  //triangle( fastForward2X1, fastForward2Y1, fastForward2X2, fastForward2Y2, fastForward2X3, fastForward2Y3 );
+  //rect( pause1X, pause1Y, pause1Width, pause1Height );
+  //rect( pause2X, pause2Y, pause2Width, pause2Height );
   //PAUSE
 } //End setup
 //
