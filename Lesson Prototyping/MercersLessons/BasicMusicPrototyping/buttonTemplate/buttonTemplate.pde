@@ -25,8 +25,8 @@ void setup() {
   musicButtonY = divY;
   musicButtonWidth = smallerSide;
   musicButtonHeight = smallerSide;
-  stopX = musicButtonX;
-  stopY = musicButtonY;
+  stopX = musicButtonX + musicButtonWidth*1/4;
+  stopY = musicButtonY + musicButtonHeight*1/4;
   stopWidth = musicButtonWidth*1/2;
   stopHeight = musicButtonHeight*1/2;
   //
