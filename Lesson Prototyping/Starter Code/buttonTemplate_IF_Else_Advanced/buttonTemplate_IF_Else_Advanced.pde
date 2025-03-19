@@ -22,18 +22,21 @@ void setup() {
   divWidth = appWidth*1/2;
   divHeight = appHeight*1/2;
   float smallerSide = ( divWidth < divHeight ) ? divWidth : divHeight ; //Ternary Operator
+  musicButtonWidth = smallerSide; //NOTICE: variables reordered b/c used to calculate X & Y
+  musicButtonHeight = smallerSide;
   //if () {} else {} to change X OR Y depending on smallerSide
   if ( divWidth < divHeight ) {
     //divWidth smaller side
-    //must CENTER or BOTTOM 
-    musicButtonX = divX;
+    //must CENTER or BOTTOM on Y-Axis
+    musicButtonX = divX; //Old divX
+    musicButtonY = divY + (divHeight - musicButtonHeight)/2;
   } else {
     //divHeight smaller side
+    //must CENTER or Right-justify on X-Axis
+    musicButtonX = divX + ( divWidth - musicButtonWidth )/2;
+    musicButtonY = divY; //Old divY
   }
-  musicButtonX = divX;
-  musicButtonY = divY;
-  musicButtonWidth = smallerSide;
-  musicButtonHeight = smallerSide;
+  println(musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight);
   //
   //DIV: musicButtonDIV
   //rect( X, Y, Width, Height );
