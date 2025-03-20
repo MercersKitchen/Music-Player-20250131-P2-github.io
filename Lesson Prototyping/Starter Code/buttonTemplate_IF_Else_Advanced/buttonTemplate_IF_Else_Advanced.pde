@@ -41,7 +41,7 @@ void setup() {
   //DIV: musicButtonDIV
   //rect( X, Y, Width, Height );
   //triangle( X1, Y1, X2, Y2, X3, Y3 );
-  rect( divX, divY, divWidth, divHeight );
+  //rect( divX, divY, divWidth, divHeight );
   rect( musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight );
   //Shapes to turn off
   //rect( stopX, stopY, stopWidth, stopHeight );
