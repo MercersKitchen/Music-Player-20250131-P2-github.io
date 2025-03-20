@@ -3,7 +3,7 @@
 //Library - Minim
 //
 //Global Variables
-float imageX, imageY, imageWidth, imageHeight;
+float imageDivX, imageDivY, imageDivWidth, imageDivHeight;
 //
 void setup() {
   //Display
@@ -11,13 +11,13 @@ void setup() {
   int appWidth = displayWidth;
   int appHeight = displayHeight;
   //
-  imageX = appWidth*0.17;
-  imageY = appHeight*0.20;
-  imageWidth = appWidth*0.67;
-  imageHeight = appHeight*0.15;
+  imageDivX = appWidth*0.17;
+  imageDivY = appHeight*0.20;
+  imageDivWidth = appWidth*0.67;
+  imageDivHeight = appHeight*0.15;
   //
   //rect(X, Y, Width, Height);
-  rect(imageX, imageY, imageWidth, imageHeight);
+  rect(imageDivX, imageDivY, imageDivWidth, imageDivHeight);
   //
 } //End setup
 //

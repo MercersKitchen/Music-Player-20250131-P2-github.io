@@ -26,6 +26,7 @@ void setup() {
   musicButtonY = divY; //Produces button in the corner of DIV
   musicButtonWidth = smallerSide;
   musicButtonHeight = smallerSide;
+  println( musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight );
   //
   //DIV: musicButtonDIV
   //rect( X, Y, Width, Height );

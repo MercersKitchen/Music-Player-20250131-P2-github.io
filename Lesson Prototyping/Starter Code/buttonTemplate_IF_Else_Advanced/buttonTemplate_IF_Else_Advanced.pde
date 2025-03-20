@@ -42,37 +42,38 @@ void setup() {
     musicButtonX = divX + ( divWidth - musicButtonWidth )/2;
     musicButtonY = divY; //Old divY
   }
+  println( musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight );
   //Music Button Variables and numbers from paper folding
-  stopX = musicButtonX + musicButtonWidth*1/4;
-  stopY = musicButtonY + musicButtonHeight*1/4;
-  stopWidth = musicButtonWidth*1/2;
-  stopHeight = musicButtonHeight*1/2;
-  playX1 = musicButtonX + musicButtonWidth*1/4;
-  playY1 = musicButtonY + musicButtonHeight*1/4;
-  playX2 = musicButtonX + musicButtonWidth*3/4;
-  playY2 = musicButtonY + musicButtonHeight*1/2;
-  playX3 = musicButtonX + musicButtonWidth*1/4;
-  playY3 = musicButtonY + musicButtonHeight*3/4;
-  fastForward1X1 = musicButtonX + musicButtonWidth*1/4;
-  fastForward1Y1 = musicButtonY + musicButtonHeight*1/4;
-  fastForward1X2 = musicButtonX + musicButtonWidth*1/2;
-  fastForward1Y2 = musicButtonY + musicButtonHeight*1/2;
-  fastForward1X3 = musicButtonX + musicButtonWidth*1/4;
-  fastForward1Y3 = musicButtonY + musicButtonHeight*3/4;
-  fastForward2X1 = musicButtonX + musicButtonWidth*1/2;
-  fastForward2Y1 = musicButtonY + musicButtonHeight*1/4;
-  fastForward2X2 = musicButtonX + musicButtonWidth*3/4;
-  fastForward2Y2 = musicButtonY + musicButtonHeight*1/2;
-  fastForward2X3 = musicButtonX + musicButtonWidth*1/2;
-  fastForward2Y3 = musicButtonY + musicButtonHeight*3/4;
-  pause1X = musicButtonX + musicButtonWidth*1/4;
-  pause1Y = musicButtonY + musicButtonHeight*1/4;
-  pause1Width = musicButtonWidth*1/8;
-  pause1Height = musicButtonHeight*1/2;
-  pause2X = musicButtonX + musicButtonWidth*5/8;
-  pause2Y = musicButtonY + musicButtonHeight*1/4;
-  pause2Width = musicButtonWidth*1/8;
-  pause2Height = musicButtonHeight*1/2;
+  stopX = ;
+  stopY = ;
+  stopWidth = ;
+  stopHeight = ;
+  playX1 = ;
+  playY1 = ;
+  playX2 = ;
+  playY2 = ;
+  playX3 = ;
+  playY3 = ;
+  fastForward1X1 = ;
+  fastForward1Y1 = ;
+  fastForward1X2 = ;
+  fastForward1Y2 = ;
+  fastForward1X3 = ;
+  fastForward1Y3 = ;
+  fastForward2X1 = ;
+  fastForward2Y1 = ;
+  fastForward2X2 = 4;
+  fastForward2Y2 = ;
+  fastForward2X3 = ;
+  fastForward2Y3 = ;
+  pause1X = ;
+  pause1Y = ;
+  pause1Width = ;
+  pause1Height = ;
+  pause2X = ;
+  pause2Y = ;
+  pause2Width = ;
+  pause2Height = ;
   //
   //DIV: musicButtonDIV
   //rect( X, Y, Width, Height );
