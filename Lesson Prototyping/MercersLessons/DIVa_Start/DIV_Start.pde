@@ -17,11 +17,11 @@ void setup() {
   imageHeight = appHeight*0.15;
   //
   //rect(X, Y, Width, Height);
+  rect(imageX, imageY, imageWidth, imageHeight);
   //
 } //End setup
 //
 void draw() {
-  rect(imageX, imageY, imageWidth, imageHeight);
 } //End draw
 //
 void mousePressed() {} //End mousePressed
