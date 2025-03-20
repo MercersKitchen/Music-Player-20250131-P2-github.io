@@ -10,7 +10,7 @@ DIVs
 Images
 - Simple images, no aspect ratio
 - Data: images change with song (leading to multiple arrays)
-- Algoriothm: images in aspect ration
+- Algorithm: images in aspect ration
 - Idea: drag and drop
 
 - Emphasize how the shape is drawn in the abstract DIV
@@ -37,7 +37,7 @@ Need a flowchart about how the music buttons what the will control
 - Intermediate: combinations of simple buttons
 - Intermediate: using void draw() {} as play
 - Intermediate: minimalistic buttons and intuitive feel
-- Advanced: saving perferences and which song, position
+- Advanced: saving preferences and which song, position
 
 
 Colours: Day, Dark, Night Modes
