@@ -21,7 +21,7 @@ float fastForwardDivX, fastForwardDivY, fastForwardDivWidth, fastForwardDivHeigh
 float nextDivX, nextDivY, nextDivWidth, nextDivHeight;
 float shuffleDivX, shuffleDivY, shuffleDivWidth, shuffleDivHeight;
 float songPositionDivX, songPositionDivY, songPositionDivWidth, songPositionDivHeight;
-float timeRemainingDivX, timeRemainingDivY, timeRemainingDivWidth, timeRemainingDivHeigh;
+float timeRemainingDivX, timeRemainingDivY, timeRemainingDivWidth, timeRemainingDivHeight;
 float songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight;
 float timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight;
 //Button Variables after
@@ -31,13 +31,13 @@ void setup() {
   fullScreen();
   int appWidth = displayWidth;
   int appHeight = displayHeight;
+  int shortSide = ( appWidth < appHeight ) ? appWidth : appHeight ;
   //
   //Population
-  quitX = ;
-  quitY = ;
-  quitWidth = ;
-  quitHeight = ;
-  //
+  quitX = appWidth - shortSide*1/20;
+  quitY = 0;
+  quitWidth = shortSide*1/20;
+  quitHeight = shortSide*1/20;
   imageDivX = appWidth*1/4;
   imageDivY = appHeight*1/5;
   imageDivWidth = appWidth*1/2;
@@ -48,49 +48,51 @@ void setup() {
   int widthOfButton = appWidth/numberOfButtons;
   int beginningButtonSpace = widthOfButton;
   int buttonY = appHeight*3/5;
-  stopDivX = beginningButtonSpace;
+  stopDivX = beginningButtonSpace + widthOfButton*0;
   stopDivY = buttonY;
   stopDivWidth = widthOfButton;
   stopDivHeight = widthOfButton;
-  //
-  muteDivX = ;
-  muteDivY = ;
-  muteDivWidth = ;
-  muteDivHeight = ;
-  previousDivX = ;
-  previousDivY = ;
-  previousDivWidth = ;
-  previousDivHeight = ;
-  fastRewindDivX = ;
-  fastRewindDivY = ;
-  fastRewindDivWidth = ;
-  fastRewindDivHeight = ;
-  pauseDivX = ;
-  pauseDivY = ;
-  pauseDivWidth = ;
-  pauseDivHeight = ;
+  muteDivX = beginningButtonSpace + widthOfButton*1;
+  muteDivY = buttonY;
+  muteDivWidth = widthOfButton;
+  muteDivHeight = widthOfButton;
+  previousDivX = beginningButtonSpace + widthOfButton*2;
+  previousDivY = buttonY;
+  previousDivWidth = widthOfButton;
+  previousDivHeight = widthOfButton;
+  fastRewindDivX = beginningButtonSpace + widthOfButton*3;
+  fastRewindDivY = buttonY;
+  fastRewindDivWidth = widthOfButton;
+  fastRewindDivHeight = widthOfButton;
+  pauseDivX = beginningButtonSpace + widthOfButton*4;
+  pauseDivY = buttonY;
+  pauseDivWidth = widthOfButton;
+  pauseDivHeight = widthOfButton;
   playDivX = beginningButtonSpace + widthOfButton*5; //TEACHER Only" manipulate this number to draw simulate all buttons
   playDivY = buttonY;
   playDivWidth = widthOfButton;
   playDivHeight = widthOfButton;
-  loopOnceDivX = ;
-  loopInfiniteDivX = ;
-  loopInfiniteDivY = ;
-  loopInfiniteDivWidth = ;
-  loopInfiniteDivHeight = ;
-  fastForwardDivX = ;
-  fastForwardDivY = ;
-  fastForwardDivWidth = ;
-  fastForwardDivHeight = ;
-  nextDivX = ;
-  nextDivY = ;
-  nextDivWidth = ;
-  nextDivHeight = ;
-  shuffleDivX = ;
-  shuffleDivY = ;
-  shuffleDivWidth = ;
-  shuffleDivHeight = ;
-  //
+  loopOnceDivX = beginningButtonSpace + widthOfButton*6;
+  loopOnceDivY = buttonY;
+  loopOnceDivWidth = widthOfButton;
+  loopOnceDivHeight = widthOfButton;
+  loopInfiniteDivX = beginningButtonSpace + widthOfButton*7;
+  loopInfiniteDivY = buttonY;
+  loopInfiniteDivWidth = widthOfButton;
+  loopInfiniteDivHeight = widthOfButton;
+  fastForwardDivX = beginningButtonSpace + widthOfButton*8;
+  fastForwardDivY = buttonY;
+  fastForwardDivWidth = widthOfButton;
+  fastForwardDivHeight = widthOfButton;
+  nextDivX = beginningButtonSpace + widthOfButton*9;
+  nextDivY = buttonY;
+  nextDivWidth = widthOfButton;
+  nextDivHeight = widthOfButton;
+  shuffleDivX = beginningButtonSpace + widthOfButton*10;
+  shuffleDivY = buttonY;
+  shuffleDivWidth = widthOfButton;
+  shuffleDivHeight = widthOfButton;
+  /*
   songPositionDivX = ;
   songPositionDivY = ;
   songPositionDivWidth = ;
@@ -98,7 +100,7 @@ void setup() {
   timeRemainingDivX = ;
   timeRemainingDivY = ;
   timeRemainingDivWidth = ;
-  timeRemainingDivHeigh = ;
+  timeRemainingDivHeight = ;
   songTitleDivX = ;
   songTitleDivY = ;
   songTitleDivWidth = ;
@@ -107,7 +109,7 @@ void setup() {
   timeBarDivY = ;
   timeBarDivWidth = ;
   timeBarDivHeight = ;
-  //
+  */
   //DIVs
   //rect(X, Y, Width, Height)
   rect(quitX, quitY, quitWidth, quitHeight);
