@@ -13,8 +13,6 @@ float fastForward1X1, fastForward1Y1, fastForward1X2, fastForward1Y2, fastForwar
 float fastForward2X1, fastForward2Y1, fastForward2X2, fastForward2Y2, fastForward2X3, fastForward2Y3;
 float pause1X, pause1Y, pause1Width, pause1Height;
 float pause2X, pause2Y, pause2Width, pause2Height;
-
-
 //Music Button Floats from 2D Shapes
 //
 void setup() {
@@ -78,7 +76,7 @@ void setup() {
   //triangle( fastForward2X1, fastForward2Y1, fastForward2X2, fastForward2Y2, fastForward2X3, fastForward2Y3 );
   //rect( pause1X, pause1Y, pause1Width, pause1Height );
   //rect( pause2X, pause2Y, pause2Width, pause2Height );
-  //PAUSE
+  //
 } //End setup
 //
 void draw() {
