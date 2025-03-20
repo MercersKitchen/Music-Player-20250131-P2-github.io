@@ -30,10 +30,11 @@ void setup() {
   //DIV: musicButtonDIV
   //rect( X, Y, Width, Height );
   //triangle( X1, Y1, X2, Y2, X3, Y3 );
-  rect( divX, divY, divWidth, divHeight );
+  //rect( divX, divY, divWidth, divHeight );
   rect( musicButtonX, musicButtonY, musicButtonWidth, musicButtonHeight );
   //Shapes to turn off
   //rect( stopX, stopY, stopWidth, stopHeight );
+  //triangle( playX1, playY1, playX2, playY2, playX3, playY3 );
   //triangle( fastForward1X1, fastForward1Y1, fastForward1X2, fastForward1Y2, fastForward1X3, fastForward1Y3 );
   //triangle( fastForward2X1, fastForward2Y1, fastForward2X2, fastForward2Y2, fastForward2X3, fastForward2Y3 );
   //rect( pause1X, pause1Y, pause1Width, pause1Height );
