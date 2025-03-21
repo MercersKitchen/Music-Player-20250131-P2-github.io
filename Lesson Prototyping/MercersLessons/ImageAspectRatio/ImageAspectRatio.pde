@@ -12,9 +12,11 @@
 //Library - Minim
 //
 //Global Variables
-float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 float imageDivX, imageDivY, imageDivWidth, imageDivHeight;
-PImage backgroundImage;
+PImage backgroundImage, bikeImage;
+float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
+float bikeX, bikeY, bikeImageWidth, bikeImageHeight;
+float bikeX_Changed, bikeY_Changed, bikeImageWidthChanged, bikeImageHeightChanged;
 //
 void setup() {
   fullScreen();
@@ -27,11 +29,14 @@ void setup() {
   String fileTypeJPG = ".jpg";
   String imageFolder = "Images";
   String imageGeomterySquare = "Square";
-  String imageGeomteryLandscape = "";
+  String imageGeomteryLandscape = "Landscape";
   String imageGeomteryPortrait = "";
   String soccerBall = "SoccerBall";
+  String bike = "bike";
   String file = imageFolder + open + imageGeomterySquare + open + soccerBall + fileTypeJPG;
   backgroundImage = loadImage(file);
+  file = imageFolder + open + imageGeomteryLandscape + open + bike + fileTypeJPG;
+  bikeImage = loadImage(file);
   //
   //Population
   backgroundImageX = appWidth*0;
@@ -42,6 +47,19 @@ void setup() {
   imageDivY = appHeight*1/5;
   imageDivWidth = appWidth*1/2;
   imageDivHeight = appHeight*1.5/5; //1+1.5=2.5, half of the total height
+  bikeX_Changed = bikeX = imageDivX;
+  bikeY_Changed = bikeY = imageDivY;
+  bikeImageWidthChanged = bikeImageWidth = 860;
+  bikeImageHeightChanged = bikeImageHeight = 529;
+  //
+  /* Algorithm to change variables of Image
+  - Establish Landscape or Portrait of DIV
+  - Note: I always fill smaller side of DIV, then calculate larger side of DIV
+  - Hardcode if ratio will be >1 or <1 ... influences * or /
+  - In the image, decide if calculating the larger side or the smaller side
+  */
+  //
+  //CONTINUE HERE WITH Images.pde
   //
   //DIVs
   //rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
@@ -57,6 +75,8 @@ void draw() {
    - ANS: this is compression
    */
   //Image in DIV
+  image( bikeImage, bikeX, bikeY, imageDivWidth, imageDivHeight );
+  image( bikeImage, bikeX_Changed, bikeY_Changed, bikeImageWidthChanged, bikeImageHeightChanged );
   //Image CENTER, LEFT, RIGHT, TOP, BOTTOM, etc.
   //
 } //End draw
