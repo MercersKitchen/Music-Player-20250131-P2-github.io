@@ -5,7 +5,7 @@
 
 Demo Soccer ball image (from Amazon.com) in WORD
 Square does not change
-Will become an oval is apsect ratio changes
+Will become an oval is aspect ratio changes
 
 ---
 
@@ -21,7 +21,7 @@ Divide both dimensions, does not matter which is first
 Answer will be >1, <1, or =1
 Thus, can divide length by width and doesn't matter if 
 
-Answer >1, mutliply smaller dimension to get larger dimension
+Answer >1, multiply smaller dimension to get larger dimension
 Answer <1, divide smaller dimension to get larger dimension
 Answer >1, divide larger dimension to get smaller dimension
 Answer <1, multiple larger dimension to get smaller dimension
@@ -37,15 +37,15 @@ What is the math
 ---
 
 Handout 11x17, scissors, and ruler (use old paper for BLOCKS)
-Need scalled down 11x8.5
+Need scaled down 11x8.5
 
-Computers do something called image resizing very easly
-- stretching or shirnking pixels is easy and the image looks exactly the same
+Computers do something called image resizing very easily
+- stretching or shrinking pixels is easy and the image looks exactly the same
 - if an image has very little memory, this image can appear pixelated
 
 A small or big image will fit in a rect() 
 - the smaller dimension will not look weird, =1
-- the larger dimesion will change aspect ration
+- the larger dimension will change aspect ration
 
 CAUTION: will the image fit inside it's frame
 
@@ -53,7 +53,7 @@ Do a couple of examples, then write an algorithm in groups on a 11x17
 - will an 11x8.5 fit in given rectangles
 
 Students need to write out algorithm for Aspect Ration
-- What do they have? (Varaibles for dimensions of image and DIV, ratio
+- What do they have? (Variables for dimensions of image and DIV, ratio
 - What is being compared? (Create BLOCKS for variables)
 - What are they trying to do? (What will result tell us?)
 

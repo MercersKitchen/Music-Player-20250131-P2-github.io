@@ -7,3 +7,11 @@ See Processing.org: https://processing.org/reference/PImage.html
 
 Also see https://processing.org/reference#image
 
+---
+
+Background Image Starter Code: static program
+
+Then review boilerplate
+
+---
+
