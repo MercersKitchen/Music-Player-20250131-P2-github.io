@@ -1,8 +1,8 @@
 /* Purpose: draw a rectangle
-   Vocabulary
-   - Declaration & Initialization
-   - Local Variables v Global Variables
-   - Population of variables
+ Vocabulary
+ - Declaration & Initialization
+ - Local Variables v Global Variables
+ - Population of variables
  */
 //Library - Minim
 //
@@ -21,11 +21,6 @@ void setup() {
   println(displayWidth, displayHeight);
   int appWidth = displayWidth;
   int appHeight = displayHeight;
-  //
-  println(appWidth, appHeight);
-  appWidth = displayWidth;
-  appHeight = displayHeight;
-  println(appWidth, appHeight);
   //
   imageDivX = appWidth*1/4;
   imageDivY = appHeight*1/5;
