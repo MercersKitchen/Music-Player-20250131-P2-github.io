@@ -53,10 +53,12 @@ void setup() {
   bikeImageHeightChanged = bikeImageHeight = 529;
   //
   /* Algorithm to change variables of Image
-  - Establish Landscape or Portrait of DIV
-  - Note: I always fill smaller side of DIV, then calculate larger side of DIV
-  - Hardcode if ratio will be >1 or <1 ... influences * or /
-  - In the image, decide if calculating the larger side or the smaller side
+  - Establish Landscape (square) or Portrait of DIV: smaller side
+  - Establish Landscape (square) or Portrait of Image: larger side
+  - If both same, verify it fits, shrink if necessary
+  - If both different, larger image dimension to smaller rect(dimension), will always work
+  - Note: need a more complicated algorithm to show more image vs. blank rect() surface area
+  - Aspect Ratio Common Sense Algorithm: Hardcode if ratio will be >1 or <1 ... influences * or /
   */
   //
   //CONTINUE HERE WITH Images.pde
