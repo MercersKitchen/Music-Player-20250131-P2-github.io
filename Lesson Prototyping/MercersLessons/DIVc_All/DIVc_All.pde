@@ -1,8 +1,8 @@
 /* Purpose: draw a rectangle
-   Vocabulary
-   - Declaration & Initialization
-   - Local Variables v Global Variables
-   - Population of variables
+ Vocabulary
+ - Declaration & Initialization
+ - Local Variables v Global Variables
+ - Population of variables
  */
 //Library - Minim
 //
@@ -92,24 +92,36 @@ void setup() {
   shuffleDivY = buttonY;
   shuffleDivWidth = widthOfButton;
   shuffleDivHeight = widthOfButton;
+
+  float musicSongPaddingY = widthOfButton*1/4;
+  float musicSongSpaceX = stopDivX;
+  float musicSongSpaceY = stopDivY + widthOfButton + musicSongPaddingY;
+  float musicSongSpaceWidth = appWidth - widthOfButton*2;
+  float musicSongSpaceHeight = appHeight - musicSongPaddingY - musicSongSpaceY;
+  rect(musicSongSpaceX, musicSongSpaceY, musicSongSpaceWidth, musicSongSpaceHeight); //testing only
   /*
   songPositionDivX = ;
-  songPositionDivY = ;
-  songPositionDivWidth = ;
-  songPositionDivHeight = ;
-  timeRemainingDivX = ;
-  timeRemainingDivY = ;
-  timeRemainingDivWidth = ;
-  timeRemainingDivHeight = ;
-  songTitleDivX = ;
-  songTitleDivY = ;
-  songTitleDivWidth = ;
-  songTitleDivHeight = ;
-  timeBarDivX = ;
-  timeBarDivY = ;
-  timeBarDivWidth = ;
-  timeBarDivHeight = ;
-  */
+   songPositionDivY = ;
+   songPositionDivWidth = ;
+   songPositionDivHeight = ;
+   
+   timeRemainingDivX = ;
+   timeRemainingDivY = ;
+   timeRemainingDivWidth = ;
+   timeRemainingDivHeight = ;
+   
+   songTitleDivX = ;
+   songTitleDivY = ;
+   songTitleDivWidth = ;
+   songTitleDivHeight = ;
+   */
+  float musicSongSpaceButtonHeight = musicSongSpaceHeight*1/5;
+  timeBarDivX = musicSongSpaceX;
+  timeBarDivY = musicSongSpaceY + musicSongSpaceButtonHeight*2;
+  timeBarDivWidth = musicSongSpaceWidth;
+  timeBarDivHeight = musicSongSpaceButtonHeight;
+
+
   //DIVs
   //rect(X, Y, Width, Height)
   rect(quitX, quitY, quitWidth, quitHeight);
