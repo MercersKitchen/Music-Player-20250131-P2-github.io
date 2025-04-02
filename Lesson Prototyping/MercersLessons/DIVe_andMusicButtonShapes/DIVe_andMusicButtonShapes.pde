@@ -23,6 +23,11 @@ float timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight;
 float totalTimeDivX, totalTimeDivY, totalTimeDivWidth, totalTimeDivHeight;
 //Button Variables after
 float stopButtonX, stopButtonY, stopButtonWidth, stopButtonHeight;
+float playX1, playY1, playX2, playY2, playX3, playY3;
+float fastForwardX1, fastForwardY1, fastForwardX2, fastForwardY2, fastForwardX3, fastForwardY3;
+float fastForwardX4, fastForwardY4, fastForwardX5, fastForwardY5, fastForwardX6, fastForwardY6;
+float pauseX1, pauseY1, pauseWidth1, pauseHeight1;
+float pauseX2, pauseY2, pauseWidth2, pauseHeight2;
 //
 void setup() {
   // Display
@@ -57,11 +62,10 @@ void setup() {
   stopDivHeight = widthOfButton;
   //
   //STOP BUTTON
-  float smallerSide = ( stopDivWidth < stopDivHeight ) ? stopDivWidth : stopDivHeight ; //Ternary Operator
   stopButtonX = stopDivX + stopDivWidth*1/4;
   stopButtonY = stopDivY + stopDivHeight*1/4;
-  stopButtonWidth = smallerSide*1/2;
-  stopButtonHeight = smallerSide*1/2;
+  stopButtonWidth = widthOfButton*1/2;
+  stopButtonHeight = widthOfButton*1/2;
   //
   muteDivX = beginningButtonSpace + widthOfButton*1;
   muteDivY = buttonY;
@@ -79,10 +83,30 @@ void setup() {
   pauseDivY = buttonY;
   pauseDivWidth = widthOfButton;
   pauseDivHeight = widthOfButton;
+  //
+  //Pause Button
+  pauseX1 = pauseDivX + pauseDivWidth*1/4;
+  pauseY1 = pauseDivY + pauseDivHeight*1/4;
+  pauseWidth1 = pauseDivWidth*1/8;
+  pauseHeight1 = pauseDivHeight*1/2;
+  pauseX2 = pauseDivX + pauseDivWidth*5/8;
+  pauseY2 = pauseDivY + pauseDivHeight*1/4;
+  pauseWidth2 = pauseDivWidth*1/8;
+  pauseHeight2 = pauseDivHeight*1/2;
+  //
   playDivX = beginningButtonSpace + widthOfButton*5; //TEACHER Only" manipulate this number to draw simulate all buttons
   playDivY = buttonY;
   playDivWidth = widthOfButton;
   playDivHeight = widthOfButton;
+  //
+  //Play Button
+  playX1 = playDivX + playDivWidth*1/4;
+  playY1 = playDivY + playDivHeight*1/4;
+  playX2 = playDivX + playDivWidth*3/4;
+  playY2 = playDivY + playDivHeight*1/2;
+  playX3 = playDivX + playDivWidth*1/4;
+  playY3 = playDivY + playDivHeight*3/4;
+  //
   loopOnceDivX = beginningButtonSpace + widthOfButton*6;
   loopOnceDivY = buttonY;
   loopOnceDivWidth = widthOfButton;
@@ -95,6 +119,21 @@ void setup() {
   fastForwardDivY = buttonY;
   fastForwardDivWidth = widthOfButton;
   fastForwardDivHeight = widthOfButton;
+  //
+  //Fast Forward Button
+  fastForwardX1 = fastForwardDivX + fastForwardDivWidth*1/4;
+  fastForwardY1 = fastForwardDivY + fastForwardDivHeight*1/4;
+  fastForwardX2 = fastForwardDivX + fastForwardDivWidth*1/2;
+  fastForwardY2 = fastForwardDivY + fastForwardDivHeight*1/2;
+  fastForwardX3 = fastForwardDivX + fastForwardDivWidth*1/4;
+  fastForwardY3 = fastForwardDivY + fastForwardDivHeight*3/4;
+  fastForwardX4 = fastForwardDivX + fastForwardDivWidth*1/2;
+  fastForwardY4 = fastForwardDivY + fastForwardDivHeight*1/4;
+  fastForwardX5 = fastForwardDivX + fastForwardDivWidth*3/4;
+  fastForwardY5 = fastForwardDivY + fastForwardDivHeight*1/2;
+  fastForwardX6 = fastForwardDivX + fastForwardDivWidth*1/2;
+  fastForwardY6 = fastForwardDivY + fastForwardDivHeight*3/4;
+  //
   nextDivX = beginningButtonSpace + widthOfButton*9;
   nextDivY = buttonY;
   nextDivWidth = widthOfButton;
@@ -151,7 +190,11 @@ void setup() {
   //
   //rect(timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight);
   rect(stopButtonX, stopButtonY, stopButtonWidth, stopButtonHeight);
-  //
+  //triangle(playX1, playY1, playX2, playY2, playX3, playY3);
+  //triangle(fastForwardX1, fastForwardY1, fastForwardX2, fastForwardY2, fastForwardX3, fastForwardY3);
+  //triangle(fastForwardX4, fastForwardY4, fastForwardX5, fastForwardY5, fastForwardX6, fastForwardY6);
+  //rect(pauseX1, pauseY1, pauseWidth1, pauseHeight1);
+  //rect(pauseX2, pauseY2, pauseWidth2, pauseHeight2);
 } //End setup
 //
 void draw() {
