@@ -21,10 +21,13 @@ void setup() {
   int appHeight = displayHeight;
   //
   //Population
+  //DIV is rect()
   divX = appWidth*1/4;
   divY = appHeight*1/4;
   divWidth = appWidth*1/2;
   divHeight = appHeight*1/2;
+  //
+  //rect(DIV) is made into a square(DIV)
   float smallerSide = ( divWidth < divHeight ) ? divWidth : divHeight ; //Ternary Operator
   musicButtonX = divX;
   musicButtonY = divY;

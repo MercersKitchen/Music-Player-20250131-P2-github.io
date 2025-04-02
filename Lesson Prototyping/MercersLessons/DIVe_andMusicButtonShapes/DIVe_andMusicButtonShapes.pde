@@ -45,6 +45,7 @@ void setup() {
   songTitleDivWidth = appWidth*1/2;
   songTitleDivHeight = appHeight*1/10;
   //
+  //rect(DIV) is a square to start, by design
   int numberOfButtons = 13; //Half a button on either side as space, Center Button is Play
   println("Button Width:", appWidth/numberOfButtons);
   int widthOfButton = appWidth/numberOfButtons;
@@ -62,7 +63,7 @@ void setup() {
   stopButtonWidth = smallerSide*1/2;
   stopButtonHeight = smallerSide*1/2;
   //
-muteDivX = beginningButtonSpace + widthOfButton*1;
+  muteDivX = beginningButtonSpace + widthOfButton*1;
   muteDivY = buttonY;
   muteDivWidth = widthOfButton;
   muteDivHeight = widthOfButton;
