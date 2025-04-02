@@ -1,9 +1,5 @@
-/* Purpose: draw a rectangle
- Vocabulary
- - Declaration & Initialization
- - Local Variables v Global Variables
- - Population of variables
- */
+// Purpose: combine prototyped 2D Music Button Symbols
+//
 //Library - Minim
 //
 //Global Variables
@@ -26,19 +22,20 @@ float songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight;
 float timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight;
 float totalTimeDivX, totalTimeDivY, totalTimeDivWidth, totalTimeDivHeight;
 //Button Variables after
+float stopButtonX, stopButtonY, stopButtonWidth, stopButtonHeight;
 //
 void setup() {
   // Display
   fullScreen();
   int appWidth = displayWidth;
   int appHeight = displayHeight;
-  int shortSide = ( appWidth < appHeight ) ? appWidth : appHeight ;
+  int appShortSide = ( appWidth < appHeight ) ? appWidth : appHeight ;
   //
   //Population
-  quitX = appWidth - shortSide*1/20;
+  quitX = appWidth - appShortSide*1/20;
   quitY = 0;
-  quitWidth = shortSide*1/20;
-  quitHeight = shortSide*1/20;
+  quitWidth = appShortSide*1/20;
+  quitHeight = appShortSide*1/20;
   imageDivX = appWidth*1/4;
   imageDivY = appHeight*1/5;
   imageDivWidth = appWidth*1/2;
@@ -57,7 +54,15 @@ void setup() {
   stopDivY = buttonY;
   stopDivWidth = widthOfButton;
   stopDivHeight = widthOfButton;
-  muteDivX = beginningButtonSpace + widthOfButton*1;
+  //
+  //STOP BUTTON
+  float smallerSide = ( stopDivWidth < stopDivHeight ) ? stopDivWidth : stopDivHeight ; //Ternary Operator
+  stopButtonX = stopDivX + stopDivWidth*1/4;
+  stopButtonY = stopDivY + stopDivHeight*1/4;
+  stopButtonWidth = smallerSide*1/2;
+  stopButtonHeight = smallerSide*1/2;
+  //
+muteDivX = beginningButtonSpace + widthOfButton*1;
   muteDivY = buttonY;
   muteDivWidth = widthOfButton;
   muteDivHeight = widthOfButton;
@@ -142,6 +147,9 @@ void setup() {
   rect(timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight);
   rect(timeRemainingDivX, timeRemainingDivY, timeRemainingDivWidth, timeRemainingDivHeight);
   rect(totalTimeDivX, totalTimeDivY, totalTimeDivWidth, totalTimeDivHeight);
+  //
+  //rect(timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight);
+  rect(stopButtonX, stopButtonY, stopButtonWidth, stopButtonHeight);
   //
 } //End setup
 //
