@@ -190,11 +190,11 @@ void setup() {
   //
   //rect(timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight);
   rect(stopButtonX, stopButtonY, stopButtonWidth, stopButtonHeight);
-  //triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-  //triangle(fastForwardX1, fastForwardY1, fastForwardX2, fastForwardY2, fastForwardX3, fastForwardY3);
-  //triangle(fastForwardX4, fastForwardY4, fastForwardX5, fastForwardY5, fastForwardX6, fastForwardY6);
-  //rect(pauseX1, pauseY1, pauseWidth1, pauseHeight1);
-  //rect(pauseX2, pauseY2, pauseWidth2, pauseHeight2);
+  triangle(playX1, playY1, playX2, playY2, playX3, playY3);
+  triangle(fastForwardX1, fastForwardY1, fastForwardX2, fastForwardY2, fastForwardX3, fastForwardY3);
+  triangle(fastForwardX4, fastForwardY4, fastForwardX5, fastForwardY5, fastForwardX6, fastForwardY6);
+  rect(pauseX1, pauseY1, pauseWidth1, pauseHeight1);
+  rect(pauseX2, pauseY2, pauseWidth2, pauseHeight2);
 } //End setup
 //
 void draw() {
