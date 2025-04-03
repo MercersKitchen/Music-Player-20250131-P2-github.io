@@ -23,3 +23,8 @@ Grading Basic Images
 
 ---
 
+Cousin's Algorithm Notes
+- Take your measurements?
+- Find your Aspect Ratio?
+- Do they match with someone else?
+
