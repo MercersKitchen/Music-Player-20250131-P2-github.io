@@ -3,9 +3,9 @@
 //Library - Minim
 //
 //Global Variables
-//float imageDivX, imageDivY, imageDivWidth, imageDivHeight;
+float imageDivX, imageDivY, imageDivWidth, imageDivHeight;
 //
-//PImage myFirstImage;
+PImage myFirstImage;
 //
 void setup() {
   //Display
@@ -20,6 +20,7 @@ void setup() {
   imageDivHeight = ;
   //
   //Image Aspect Ratio Algorithm
+  String myFirstImagePathway = ;
   myFirstImage = ;
   //
   //DIV
