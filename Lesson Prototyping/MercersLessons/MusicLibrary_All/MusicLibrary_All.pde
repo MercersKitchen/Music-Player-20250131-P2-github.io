@@ -11,7 +11,7 @@ import ddf.minim.ugens.*;
  */
 //Library - Minim
 Minim minim;
-int numberOfSongs = 1;
+int numberOfSongs = 8;
 //int numberOfSoundEffects = ???
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 //AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
@@ -33,17 +33,63 @@ void setup() {
   String musicPathway = "Music/";
   //Note: Download music and sound effects, then design your player with images, text, and 2D shapes
   //See Google Search: Atari pong logo free image download
+  String beatYourCompetition = "Beat_Your_Competition";
+  String cycles = "Cycles";
+  String eureka = "Eureka";
+  String ghostWalk = "Ghost_Walk";
   String groove = "groove";
+  String newsroom = "Newsroom";
+  String startYourEngines = "Start_Your_Engines";
+  String simplest = "The_Simplest";
   //Add all files, CS20 Review is special OS Java Library
   //Including the reading of the number of files in the array
   String fileExtension_mp3 = ".mp3";
   //
   String musicDirectory = "../../../" + musicPathway;
-  String file = musicDirectory + groove + fileExtension_mp3; //relative pathway or directory
+  String file = musicDirectory + beatYourCompetition + fileExtension_mp3; //relative pathway or directory
   println( file );
-  //Create a FOR loop to loadFile() a changing songName
+  //Create a FOR loop to loadFile() a changing songName, Create a Procedure with two Arrays first
+  currentSong=0;
   playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  currentSong++;
+  file = musicDirectory + cycles + fileExtension_mp3; //relative pathway or directory
+  println( file );
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  currentSong++;
+  file = musicDirectory + eureka + fileExtension_mp3; //relative pathway or directory
+  println( file );
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  currentSong++;
+  file = musicDirectory + ghostWalk + fileExtension_mp3; //relative pathway or directory
+  println( file );
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  currentSong++;
+  file = musicDirectory + groove + fileExtension_mp3; //relative pathway or directory
+  println( file );
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  currentSong++;
+  file = musicDirectory + newsroom + fileExtension_mp3; //relative pathway or directory
+  println( file );
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  currentSong++;
+  file = musicDirectory + startYourEngines + fileExtension_mp3; //relative pathway or directory
+  println( file );
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
+  currentSong++;
+  file = musicDirectory + simplest + fileExtension_mp3; //relative pathway or directory
+  println( file );
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  //
   //Music Testing
+  currentSong=0;
+  //println(currentSong);
   //playList[currentSong].play();
   //
 } //End setup
