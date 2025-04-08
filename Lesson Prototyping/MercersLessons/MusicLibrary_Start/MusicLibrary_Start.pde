@@ -87,7 +87,7 @@ void keyPressed() {
   if ( key=='K' || key=='k' ) playList[currentSong].loop(); // Loop Infinitely //Parameter: BLANK or -1
   if ( key=='F' || key=='f' ) playList[currentSong].skip( 10000 ); // Fast Forward, Rewind, & Play Again //Parameter: milliseconds
   if ( key=='R' || key=='r' ) playList[currentSong].skip( -10000 ); // Fast Reverse & Play //Parameter: negative numbers
-  if ( key=='W' || key=='w' ) { // MUTE
+  if ( key=='M' || key=='m' ) { // MUTE
     //
     //MUTE Behaviour: stops electricty to speakers, does not stop file
     //NOTE: MUTE has NO built-in PUASE button, NO built-in rewind button
