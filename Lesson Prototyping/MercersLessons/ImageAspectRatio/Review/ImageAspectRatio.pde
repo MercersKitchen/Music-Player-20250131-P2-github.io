@@ -6,25 +6,8 @@
  - Examples
  Background Image: ball is not circular, this is what compression means
  Image in DIV
- Intermediate CENTER, LEFT, RIGHT, TOP, BOTTOM, etc.
+ Image CENTER, LEFT, RIGHT, TOP, BOTTOM, etc.
  Advanced: ZOOM and Cropping (Wild Emails)
- 
- - ID imageWidth & imageHeight
-   Note: divWidth & divHeight already identified in rect(DIV)
- - Calculate Ratio: declare >1 ( or <1 )
-   float imageAspectRatio ( w > h ) ? w/h : h/w ;
- - ID image landscaspe or portrait using ternary structure (true and false)
-   Boolean imageLandscape ( w > h ) ? true : false ;
- - ID DIV structure using ternary strucutre
-   Boolean divLandscape ( w > h ) ? true : false ;
- - Compare two rectangle geometries
-   Same: pick width, calculate height
-   Different
-     - Landscape: pick width, calculate height
-     - Portrait: pick height, calculate width
- - Compare imageWidth to divWidth (or imageHeight to divHeight): is this bigger or smaller
-   Do we mutliply or divide (also depends on ratio we are using, easier to declare which ratio we are using)
- - Calculate missing dimension
  */
 //Library - Minim
 //
