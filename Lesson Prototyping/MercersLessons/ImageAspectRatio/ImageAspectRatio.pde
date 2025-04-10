@@ -9,13 +9,14 @@
  Intermediate CENTER, LEFT, RIGHT, TOP, BOTTOM, etc.
  Advanced: ZOOM and Cropping (Wild Emails)
  
+ Work through Cousins Example?: fit you into a DIV
  - ID imageWidth & imageHeight
    Note: divWidth & divHeight already identified in rect(DIV)
  - Calculate Ratio: declare >1 ( or <1 )
    float imageAspectRatio ( w > h ) ? w/h : h/w ;
- - ID image landscaspe or portrait using ternary structure (true and false)
-   Boolean imageLandscape ( w > h ) ? true : false ;
- - ID DIV structure using ternary strucutre
+ - ID imageLandscape or portrait using ternary structure (true and false)
+   Boolean image Landscape ( w > h ) ? true : false ;
+ - ID DIV structure using ternary structure
    Boolean divLandscape ( w > h ) ? true : false ;
  - Compare two rectangle geometries
    Same: pick width, calculate height
