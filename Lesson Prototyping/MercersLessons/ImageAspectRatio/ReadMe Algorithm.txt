@@ -18,23 +18,39 @@ Work through Cousins Example?: fit you into a DIV
 
 ---
 
-Given and image of width & height, put it into a DIV and maintain aspect ratio. 
+Given an image, put it into a DIV maintaining aspect ratio. 
+- Aspect Ratio can be >1 or <1 using image dimensions
 - The DIVision will not have the same width & height as the image.
-- The computer knows the width and height of the image
-- The computer knows the width and height of the DIV
-- The computer needs to know if the image is getting bigger or smaller
-- The computer needs to know how landscape & portrait is being combined or else mistakes will be made
+- The computer knows
+  image width and height
+  DIV width and height
+- Need to know if image is getting bigger or smaller inside DIV, pixel size
+- Need to know how landscape & portrait is being combined so mistakes are not made
+  Landscape Image into Landscape DIV (same)
+  Landscape Image into Portrait DIV (different)
+  Portrait Image into Portrait DIV (same)
+  Portrait Image into Landscape DIV (different)
 
-The computer will take the image pixels in width and height and adjust them to fit the DIV dimensions.
-- Called image Compression
+Eight Possible Formulae Computer can choose from
+w = h x ratio>1	| 
+w = h / ratio>1 | 
+h = w x ratio>1 | 
+h = w / ratio>1 | 
+
+---
+
+Image Compression: take the image pixels in width and height and adjust them to fit the DIV dimensions
 
 Investigation: in WORD or similar app, insert an image
 - Change both dimensions at the same time, aspect ratio stays the same
 - Change only one dimension, aspect ratio changes
 
+---
+
 Aspect Ratio: when one dimension changes, the other one is calculated
 - Width is changed, height = newWidth x ratio
 - Height is changed, width = newHeight x ratio
+CAUTION: multiplying by ratio could be image enlargement or reduction
 
 Aspect Ratio: the ratio is two numbers divided & one number is always bigger than the other. Ratios are either
 - greater than 1 ( >1 )
@@ -45,7 +61,10 @@ Aspect ratio is used to make an image bigger or smaller
 Bigger:		x >1 	|	/ <1 
 Smaller:	/ >1	|	x <1
 
-No mistakes: landscape to landscape or portrait to portrait
+
+
+
+
 
 Mistakes: landscape to portrait or portrait to landscape
 - Short story: starting bigger dimension must go to the smaller dimension
