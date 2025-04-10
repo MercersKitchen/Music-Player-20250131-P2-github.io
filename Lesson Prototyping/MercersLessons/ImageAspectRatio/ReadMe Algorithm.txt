@@ -1,3 +1,23 @@
+Work through Cousins Example?: fit you into a DIV
+- ID imageWidth & imageHeight
+  Note: divWidth & divHeight already identified in rect(DIV)
+- Calculate Ratio: declare >1 ( or <1 )
+  float imageAspectRatio ( w > h ) ? w/h : h/w ;
+- ID imageLandscape or portrait using ternary structure (true and false)
+  Boolean image Landscape ( w > h ) ? true : false ;
+- ID DIV structure using ternary structure
+  Boolean divLandscape ( w > h ) ? true : false ;
+- Compare two rectangle geometries
+  Same: pick width, calculate height
+  Different
+    - Landscape: pick width, calculate height
+    - Portrait: pick height, calculate width
+- Compare imageWidth to divWidth (or imageHeight to divHeight): is this bigger or smaller
+  Do we mutliply or divide (also depends on ratio we are using, easier to declare which ratio we are using)
+- Calculate missing dimension
+
+---
+
 Given and image of width & height, put it into a DIV and maintain aspect ratio. 
 - The DIVision will not have the same width & height as the image.
 - The computer knows the width and height of the image
@@ -25,34 +45,16 @@ Aspect ratio is used to make an image bigger or smaller
 Bigger:		x >1 	|	/ <1 
 Smaller:	/ >1	|	x <1
 
-No mistakes: lanscape to landscape or portrait to portrait
+No mistakes: landscape to landscape or portrait to portrait
 
 Mistakes: landscape to portrait or portrait to landscape
 - Short story: starting bigger dimension must go to the smaller dimension
 - Landscape to Portrait, width is bigger, portraitWidth is the new imageWidth
-- Portrait to Landscape, hieght is bigger, landscape height is the new imageHeight
+- Portrait to Landscape, height is bigger, landscape height is the new imageHeight
 
-Work through Cousins Example?: fit you into a DIV
-- ID imageWidth & imageHeight
-  Note: divWidth & divHeight already identified in rect(DIV)
-- Calculate Ratio: declare >1 ( or <1 )
-  float imageAspectRatio ( w > h ) ? w/h : h/w ;
-- ID image landscaspe or portrait using ternary structure (true and false)
-  Boolean imageLandscape ( w > h ) ? true : false ;
-- ID DIV structure using ternary strucutre
-  Boolean divLandscape ( w > h ) ? true : false ;
-- Compare two rectangle geometries
-  Same: pick width, calculate height
-  Different
-    - Landscape: pick width, calculate height
-    - Portrait: pick height, calculate width
-- Compare imageWidth to divWidth (or imageHeight to divHeight): is this bigger or smaller
-  Do we mutliply or divide (also depends on ratio we are using, easier to declare which ratio we are using)
-- Calculate missing dimension
-
-After students have the basic algorithm and knoweldge pieces, do the example backwards in flow diagram
+After students have the basic algorithm and knowledge pieces, do the example backwards in flow diagram
 Reference Examples
-Creates flow diagream
+Creates flow diagram
 
 Code
 
