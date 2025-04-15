@@ -24,12 +24,23 @@ void setup() {
   //Image Aspect Ratio Algorithm
   String myFirstImagePathway = "Images/Landscape/bike.jpg";
   myFirstImage = loadImage( myFirstImagePathway );
+  int myFirstImageWidth = 860;
+  int myFirstImageHeight = 529;
+  float imageAspectRatioGreaterOne = ( myFirstImageWidth >= myFirstImageHeight ) ? myFirstImageWidth/myFirstImageHeight : myFirstImageHeight/myFirstImageWidth ; // Choice x / for bigger or smaller
+  println(imageAspectRatioGreaterOne);
+  
+  
+  CONTINUE HERE WITH CASTING Error
+  //Landscape includes square
+  
+  //CONTINUE HERE
+  //imageWidthChanged, imageHeightChanged
   //
   //DIV
   rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
   //
   //Prototype Images
-  image( myFirstImage, imageDivX, imageDivY, imageDivWidth, imageDivHeight );
+  image( myFirstImage, imageDivX, imageDivY, imageWidthChanged, imageHeightChanged );
   //
 } //End setup
 //

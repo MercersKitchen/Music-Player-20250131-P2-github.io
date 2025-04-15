@@ -37,10 +37,11 @@ float bikeX, bikeY, bikeImageWidth, bikeImageHeight;
 float bikeX_Changed, bikeY_Changed, bikeImageWidthChanged, bikeImageHeightChanged;
 //
 void setup() {
-  fullScreen();
+  //fullScreen();
+  size(700, 500);
   println(displayWidth, displayHeight);
-  int appWidth = displayWidth;
-  int appHeight = displayHeight;
+  int appWidth = width; //displayWidth
+  int appHeight = height; //displayHeight
   //
   //Image Loading
   String open = "/";
