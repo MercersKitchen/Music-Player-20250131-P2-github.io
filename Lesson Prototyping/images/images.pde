@@ -35,16 +35,19 @@ void setup() {
     //width if imageLandscape(true) into divLandscape(true), imageLandscape(true) into divPortrait(false)
     imageWidthChanged = imageDivWidth;
     imageHeightChanged = ( myFirstImageWidth >= imageDivWidth ) ? imageWidthChanged/imageAspectRatio_GreaterOne : imageWidthChanged*imageAspectRatio_GreaterOne ;
+    if ( imageHeightChanged > imageDivHeight ) { //ERROR Catch
+      println("Image Aspect Ratio algorithm ERROR");
+      exit();
+    }
   } else {
     //height if imagePortrait(false) into divPortrait(false), imagePortrait(false) into imageLandscape(true)
     imageHeightChanged = imageDivHeight;
     imageWidthChanged = ( myFirstImageHeight >= imageDivHeight ) ? imageHeightChanged/imageAspectRatio_GreaterOne : imageHeightChanged*imageAspectRatio_GreaterOne ;
+    if ( imageWidthChanged > imageDivWidth ) { //ERROR Catch
+      println("Image Aspect Ratio algorithm ERROR");
+      exit();
+    }
   }
-
-  //Landscape includes square
-
-  //CONTINUE HERE
-  //imageWidthChanged, imageHeightChanged
   //
   //DIV
   rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
