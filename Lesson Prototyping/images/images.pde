@@ -5,6 +5,7 @@
 //Global Variables
 int appWidth, appHeight;
 float imageDivX, imageDivY, imageDivWidth, imageDivHeight;
+float imageWidthChanged=0.0, imageHeightChanged=0.0; //IN If-statement
 //
 PImage myFirstImage;
 //
@@ -28,11 +29,20 @@ void setup() {
   int myFirstImageHeight = 529;
   float imageAspectRatio_GreaterOne = ( myFirstImageWidth >= myFirstImageHeight ) ? float(myFirstImageWidth)/float(myFirstImageHeight) : float(myFirstImageHeight)/float(myFirstImageWidth) ; // Choice x / for bigger or smaller
   println(imageAspectRatio_GreaterOne);
-  
-  
-  
+  Boolean imageLandscape = ( myFirstImageWidth >= myFirstImageHeight ) ? true : false ;
+  Boolean divLandscape = ( imageDivWidth >= imageDivHeight ) ? true : false ;
+  if ( imageLandscape==true ) {
+    //width if imageLandscape(true) into divLandscape(true), imageLandscape(true) into divPortrait(false)
+    imageWidthChanged = imageDivWidth;
+    imageHeightChanged = ( myFirstImageWidth >= imageDivWidth ) ? imageWidthChanged/imageAspectRatio_GreaterOne : imageWidthChanged*imageAspectRatio_GreaterOne ;
+  } else {
+    //height if imagePortrait(false) into divPortrait(false), imagePortrait(false) into imageLandscape(true)
+    imageHeightChanged = imageDivHeight;
+    imageWidthChanged = ( myFirstImageHeight >= imageDivHeight ) ? imageHeightChanged/imageAspectRatio_GreaterOne : imageHeightChanged*imageAspectRatio_GreaterOne ;
+  }
+
   //Landscape includes square
-  
+
   //CONTINUE HERE
   //imageWidthChanged, imageHeightChanged
   //
@@ -40,7 +50,7 @@ void setup() {
   rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
   //
   //Prototype Images
-  //image( myFirstImage, imageDivX, imageDivY, imageWidthChanged, imageHeightChanged );
+  image( myFirstImage, imageDivX, imageDivY, imageWidthChanged, imageHeightChanged );
   //
 } //End setup
 //
