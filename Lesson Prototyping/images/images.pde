@@ -5,7 +5,7 @@
 //Global Variables
 int appWidth, appHeight;
 float imageDivX, imageDivY, imageDivWidth, imageDivHeight;
-float imageWidthChanged=0.0, imageHeightChanged=0.0; //IN If-statement
+float imageWidthChanged, imageHeightChanged;
 //
 PImage myFirstImage;
 //
