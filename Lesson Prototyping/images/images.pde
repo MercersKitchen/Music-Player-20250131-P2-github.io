@@ -26,11 +26,11 @@ void setup() {
   myFirstImage = loadImage( myFirstImagePathway );
   int myFirstImageWidth = 860;
   int myFirstImageHeight = 529;
-  float imageAspectRatioGreaterOne = ( myFirstImageWidth >= myFirstImageHeight ) ? myFirstImageWidth/myFirstImageHeight : myFirstImageHeight/myFirstImageWidth ; // Choice x / for bigger or smaller
-  println(imageAspectRatioGreaterOne);
+  float imageAspectRatio_GreaterOne = ( myFirstImageWidth >= myFirstImageHeight ) ? float(myFirstImageWidth)/float(myFirstImageHeight) : float(myFirstImageHeight)/float(myFirstImageWidth) ; // Choice x / for bigger or smaller
+  println(imageAspectRatio_GreaterOne);
   
   
-  CONTINUE HERE WITH CASTING Error
+  
   //Landscape includes square
   
   //CONTINUE HERE
@@ -40,7 +40,7 @@ void setup() {
   rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
   //
   //Prototype Images
-  image( myFirstImage, imageDivX, imageDivY, imageWidthChanged, imageHeightChanged );
+  //image( myFirstImage, imageDivX, imageDivY, imageWidthChanged, imageHeightChanged );
   //
 } //End setup
 //
