@@ -12,7 +12,7 @@ PImage myFirstImage;
 void setup() {
   //Display
   //fullScreen();
-  size(700, 500);
+  size(1000, 700);
   appWidth = width; //displayWidth
   appHeight = height; //displayHeight
   //
