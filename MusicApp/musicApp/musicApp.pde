@@ -33,6 +33,12 @@ float songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight;
 float timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight;
 float totalTimeDivX, totalTimeDivY, totalTimeDivWidth, totalTimeDivHeight;
 //Button Variables after
+float stopButtonX, stopButtonY, stopButtonWidth, stopButtonHeight;
+float playX1, playY1, playX2, playY2, playX3, playY3;
+float fastForwardX1, fastForwardY1, fastForwardX2, fastForwardY2, fastForwardX3, fastForwardY3;
+float fastForwardX4, fastForwardY4, fastForwardX5, fastForwardY5, fastForwardX6, fastForwardY6;
+float pauseX1, pauseY1, pauseWidth1, pauseHeight1;
+float pauseX2, pauseY2, pauseWidth2, pauseHeight2;
 //
 void setup() {
   //Display
@@ -43,23 +49,21 @@ void setup() {
   //
   //Music Loading - STRUCTURED Review
   minim = new Minim(this);
-  String musicPathway = "Music Pong/";
-  String musicPong = "Music Pong/";
-  String musicAll = "Music All/";
+  String musicPathway = "Music/";
   //Note: Download music and sound effects, then design your player with images, text, and 2D shapes
   //See Google Search: Atari pong logo free image download
-  String pongWorld = "Pong World";
+  String song = "groove";
   //Add all files, CS20 Review is special OS Java Library
   //Including the reading of the number of files in the array
   String fileExtension_mp3 = ".mp3";
   //
-  String musicDirectory = "../../../../" + musicPathway + musicPong;
-  String file = musicDirectory + pongWorld + fileExtension_mp3; //relative pathway or directory
+  String musicDirectory = "../../" + musicPathway;
+  String file = musicDirectory + song + fileExtension_mp3; //relative pathway or directory
   println( file );
   //Create a FOR loop to loadFile() a changing songName
   playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //Music Testing
-  //playList[currentSong].play();
+  playList[currentSong].play();
   //
   //Population
   quitX = appWidth - shortSide*1/20;
@@ -149,6 +153,44 @@ void setup() {
   timeBarDivWidth = musicSongSpaceWidth;
   timeBarDivHeight = musicSongSpaceHeight*1/5;
   //
+  //STOP BUTTON
+  stopButtonX = stopDivX + stopDivWidth*1/4;
+  stopButtonY = stopDivY + stopDivHeight*1/4;
+  stopButtonWidth = widthOfButton*1/2;
+  stopButtonHeight = widthOfButton*1/2;
+  //
+  //Pause Button
+  pauseX1 = pauseDivX + pauseDivWidth*1/4;
+  pauseY1 = pauseDivY + pauseDivHeight*1/4;
+  pauseWidth1 = pauseDivWidth*1/8;
+  pauseHeight1 = pauseDivHeight*1/2;
+  pauseX2 = pauseDivX + pauseDivWidth*5/8;
+  pauseY2 = pauseDivY + pauseDivHeight*1/4;
+  pauseWidth2 = pauseDivWidth*1/8;
+  pauseHeight2 = pauseDivHeight*1/2;
+  //
+  //Play Button
+  playX1 = playDivX + playDivWidth*1/4;
+  playY1 = playDivY + playDivHeight*1/4;
+  playX2 = playDivX + playDivWidth*3/4;
+  playY2 = playDivY + playDivHeight*1/2;
+  playX3 = playDivX + playDivWidth*1/4;
+  playY3 = playDivY + playDivHeight*3/4;
+  //
+  //Fast Forward Button
+  fastForwardX1 = fastForwardDivX + fastForwardDivWidth*1/4;
+  fastForwardY1 = fastForwardDivY + fastForwardDivHeight*1/4;
+  fastForwardX2 = fastForwardDivX + fastForwardDivWidth*1/2;
+  fastForwardY2 = fastForwardDivY + fastForwardDivHeight*1/2;
+  fastForwardX3 = fastForwardDivX + fastForwardDivWidth*1/4;
+  fastForwardY3 = fastForwardDivY + fastForwardDivHeight*3/4;
+  fastForwardX4 = fastForwardDivX + fastForwardDivWidth*1/2;
+  fastForwardY4 = fastForwardDivY + fastForwardDivHeight*1/4;
+  fastForwardX5 = fastForwardDivX + fastForwardDivWidth*3/4;
+  fastForwardY5 = fastForwardDivY + fastForwardDivHeight*1/2;
+  fastForwardX6 = fastForwardDivX + fastForwardDivWidth*1/2;
+  fastForwardY6 = fastForwardDivY + fastForwardDivHeight*3/4;
+  //
   //DIVs
   //rect(X, Y, Width, Height)
   rect(quitX, quitY, quitWidth, quitHeight);
@@ -170,11 +212,45 @@ void setup() {
   rect(timeRemainingDivX, timeRemainingDivY, timeRemainingDivWidth, timeRemainingDivHeight);
   rect(totalTimeDivX, totalTimeDivY, totalTimeDivWidth, totalTimeDivHeight);
   //
+  //rect(timeBarDivX, timeBarDivY, timeBarDivWidth, timeBarDivHeight);
+  rect(stopButtonX, stopButtonY, stopButtonWidth, stopButtonHeight);
+  triangle(playX1, playY1, playX2, playY2, playX3, playY3);
+  triangle(fastForwardX1, fastForwardY1, fastForwardX2, fastForwardY2, fastForwardX3, fastForwardY3);
+  triangle(fastForwardX4, fastForwardY4, fastForwardX5, fastForwardY5, fastForwardX6, fastForwardY6);
+  rect(pauseX1, pauseY1, pauseWidth1, pauseHeight1);
+  rect(pauseX2, pauseY2, pauseWidth2, pauseHeight2);
+  //
 } //End setup
 //
 void draw() {} //End draw
 //
-void mousePressed() {} //End mousePressed
+void mousePressed() {
+  //Copy Functions from Key Pressed SHortcuts | Prototyping
+  //CAUTION: intermediate creates functions or procedures to avoid copy-paste
+  //Basic logical operator, may need println() testing: mouseX> && mouseX< && mouseY> && mouseY<
+  if ( mouseX>quitX && mouseX<quitX+quitWidth && mouseY>quitY && mouseY<quitY+quitHeight ) exit(); //End QUIT
+  //
+  if ( mouseX>playDivX && mouseX<playDivX+playDivWidth && mouseY>playDivY && mouseY<playDivY+playDivHeight ) playList[currentSong].play(); //End Play
+  //
+  if ( mouseX>pauseDivX && mouseX<pauseDivX+pauseDivWidth && mouseY>pauseDivY && mouseY<pauseDivY+pauseDivHeight ) {
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+    } else {
+      playList[currentSong].play();
+    }
+  } //End Pause
+  //
+  if ( mouseX>stopDivX && mouseX<stopDivX+stopDivWidth && mouseY>stopDivY && mouseY<stopDivY+stopDivHeight ) {
+    if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause(); //single tap
+    } else {
+      playList[currentSong].rewind(); //double tap
+    }
+  } //End STOP
+  //
+  if ( mouseX>fastForwardDivX && mouseX<fastForwardDivX+fastForwardDivWidth && mouseY>fastForwardDivY && mouseY<fastForwardDivY+fastForwardDivHeight ) playList[currentSong].skip( 10000 ); //End Fast Forward
+  //
+} //End mousePressed
 //
 void keyPressed() {
   /* Key Board Short Cuts ... learning what the Music Buttons could be
