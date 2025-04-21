@@ -40,6 +40,9 @@ float fastForwardX4, fastForwardY4, fastForwardX5, fastForwardY5, fastForwardX6,
 float pauseX1, pauseY1, pauseWidth1, pauseHeight1;
 float pauseX2, pauseY2, pauseWidth2, pauseHeight2;
 //
+PImage musicImage;
+float musicImageX_Changed, musicImageY_Changed, musicImageWidth_Changed, musicImageHeight_Changed;
+//
 void setup() {
   //Display
   fullScreen();
@@ -64,6 +67,13 @@ void setup() {
   playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
   //Music Testing
   playList[currentSong].play();
+  //
+  //Image Loading
+  String lessonDependanciesFolder = "Lesson Dependancies Folder";
+  String imagesFolder = "Images";
+  String ball = "SoccerBall";
+  String fileExtension_JPG = ".jpg";
+  musicImage = loadImage( ball + fileExtension_JPG ); //Incomplete concatenation and loading
   //
   //Population
   quitX = appWidth - shortSide*1/20;
@@ -138,7 +148,7 @@ void setup() {
   songPositionDivX = musicSongSpaceX;
   songPositionDivY = musicSongSpaceY;
   songPositionDivWidth = musicSongSpaceWidth*1/5;
-  songPositionDivHeight = musicSongSpaceHeight*2/5;  
+  songPositionDivHeight = musicSongSpaceHeight*2/5;
   timeRemainingDivX = musicSongSpaceX + musicSongSpaceWidth*3/5;
   timeRemainingDivY = musicSongSpaceY + musicSongSpaceHeight*3/5;
   timeRemainingDivWidth = musicSongSpaceWidth*1/5;
@@ -220,9 +230,47 @@ void setup() {
   rect(pauseX1, pauseY1, pauseWidth1, pauseHeight1);
   rect(pauseX2, pauseY2, pauseWidth2, pauseHeight2);
   //
+  //Image Resampling Algorithm
+  int musicImageWidth = 1601;
+  int musicImageHeight = 1601;
+  musicImageX_Changed = imageDivX;
+  musicImageY_Changed = imageDivY;
+  float imageAspectRatio_GreaterOne = ( musicImageWidth >= musicImageHeight ) ? float(musicImageWidth)/float(musicImageHeight) : float(musicImageHeight)/float(musicImageWidth) ; // Choice x / for bigger or smaller
+  println(imageAspectRatio_GreaterOne);
+  Boolean imusicImageLandscape = ( musicImageWidth >= musicImageHeight ) ? true : false ;
+  /*Only the image geometry needs to be know for the algorithm below
+   - When the Geometries change, big dimension to small dimension must happen or image will not fit
+   - still need an ERROR-Check with oddly shaped landscape-landscape, protrait-portrait resampling
+   - size-decreasing algorithms (resampling) discussed in Text
+   */
+  if ( imusicImageLandscape==true ) {
+    musicImageWidth_Changed = imageDivWidth;
+    println("here", musicImageWidth_Changed, imageDivWidth );
+    musicImageHeight_Changed = ( musicImageWidth >= imageDivWidth ) ? musicImageWidth_Changed/imageAspectRatio_GreaterOne : musicImageWidth_Changed*imageAspectRatio_GreaterOne ;
+    if ( musicImageHeight_Changed > imageDivHeight ) { //ERROR Catch
+      println("Image Aspect Ratio algorithm ERROR");
+      //exit();
+      //
+      //What needs to happen - introduction to procedural code
+      musicImageHeight_Changed = imageDivHeight;
+      musicImageWidth_Changed = ( musicImageHeight_Changed >= imageDivHeight ) ? musicImageHeight_Changed/imageAspectRatio_GreaterOne : musicImageHeight_Changed*imageAspectRatio_GreaterOne ;
+    }
+  } else {
+    musicImageHeight_Changed = imageDivHeight;
+    musicImageWidth_Changed = ( musicImageHeight_Changed >= imageDivHeight ) ? musicImageHeight_Changed/imageAspectRatio_GreaterOne : musicImageHeight_Changed*imageAspectRatio_GreaterOne ;
+    if ( musicImageWidth_Changed > imageDivWidth ) { //ERROR Catch
+      println("Image Aspect Ratio algorithm ERROR");
+      exit();
+    }
+  }
+  //
+  //Prototype Images
+  image( musicImage, musicImageX_Changed, musicImageY_Changed, musicImageWidth_Changed, musicImageHeight_Changed );
+  //
 } //End setup
 //
-void draw() {} //End draw
+void draw() {
+} //End draw
 //
 void mousePressed() {
   //Copy Functions from Key Pressed SHortcuts | Prototyping
@@ -256,7 +304,7 @@ void keyPressed() {
   /* Key Board Short Cuts ... learning what the Music Buttons could be
    Note: CAP Lock with ||
    if ( key==? || key==? ) ; //'' only
-   - 
+   -
    if ( key==CODED || keyCode==SpecialKey ) ; //Special Keys abriviated CAPS
    All Music Player Features are built out of these Minim AudioPlayer() functions
    .isPlaying()
@@ -269,7 +317,7 @@ void keyPressed() {
    .skip()
    .unmute()
    .mute()
-   - 
+   -
    Lesson Music Button Features based on single, double, and spamming taps
    - Play
    - Pause
@@ -282,7 +330,7 @@ void keyPressed() {
    - Next Song
    - Previous Song
    - Shuffle
-   - 
+   -
    - Advanced Buttons & Combinations
    - Play-Pause-Stop
    - Auto Play
