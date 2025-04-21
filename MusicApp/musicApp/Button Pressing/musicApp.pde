@@ -43,12 +43,6 @@ float pauseX2, pauseY2, pauseWidth2, pauseHeight2;
 PImage musicImage;
 float musicImageX_Changed, musicImageY_Changed, musicImageWidth_Changed, musicImageHeight_Changed;
 //
-PFont appFont;
-float fontSize;
-float harringtonAspectRatio = 1.04 *0.7; //unknown ratio for QuitButton
-color purpleInk=#2C08FF, whiteInk=#FFFFFF;;
-String x = "X";
-//
 void setup() {
   //Display
   fullScreen();
@@ -251,6 +245,7 @@ void setup() {
    */
   if ( imusicImageLandscape==true ) {
     musicImageWidth_Changed = imageDivWidth;
+    println("here", musicImageWidth_Changed, imageDivWidth );
     musicImageHeight_Changed = ( musicImageWidth >= imageDivWidth ) ? musicImageWidth_Changed/imageAspectRatio_GreaterOne : musicImageWidth_Changed*imageAspectRatio_GreaterOne ;
     if ( musicImageHeight_Changed > imageDivHeight ) { //ERROR Catch
       println("Image Aspect Ratio algorithm ERROR");
@@ -272,32 +267,9 @@ void setup() {
   //Prototype Images
   image( musicImage, musicImageX_Changed, musicImageY_Changed, musicImageWidth_Changed, musicImageHeight_Changed );
   //
-  //Prototyping Text
-  appFont = createFont ("Harrington", appHeight);
-  fill(purpleInk);
-  textAlign(CENTER, CENTER);
-  fontSize = quitHeight*harringtonAspectRatio;
-  textFont(appFont, fontSize);
-  println(fontSize, quitHeight);
-  text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  fill(whiteInk);
-  //
 } //End setup
 //
 void draw() {
-  textAlign(CENTER, CENTER);
-  textFont(appFont, fontSize);
-  fill(purpleInk);
-  text(x, quitX, quitY, quitWidth, quitHeight);
-  fill(whiteInk);
 } //End draw
 //
 void mousePressed() {
