@@ -12,6 +12,7 @@ int numberOfSongs = 1; //Best Practice
 //int numberOfSoundEffects = ???
 AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
 //AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
+AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
 int currentSong = numberOfSongs - numberOfSongs; //ZERO
 //
 float quitX, quitY, quitWidth, quitHeight;
@@ -46,7 +47,8 @@ float musicImageX_Changed, musicImageY_Changed, musicImageWidth_Changed, musicIm
 PFont appFont;
 float fontSize;
 float harringtonAspectRatio = 1.04 *0.7; //unknown ratio for QuitButton
-color purpleInk=#2C08FF, whiteInk=#FFFFFF;;
+color purpleInk=#2C08FF, whiteInk=#FFFFFF;
+;
 String x = "X";
 //
 void setup() {
@@ -71,6 +73,7 @@ void setup() {
   println( file );
   //Create a FOR loop to loadFile() a changing songName
   playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
   //Music Testing
   playList[currentSong].play();
   //
@@ -275,29 +278,105 @@ void setup() {
   //Prototyping Text
   appFont = createFont ("Harrington", appHeight);
   fill(purpleInk);
-  textAlign(CENTER, CENTER);
+  textAlign(CENTER, TOP);
   fontSize = quitHeight*harringtonAspectRatio;
   textFont(appFont, fontSize);
-  println(fontSize, quitHeight);
   text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
-  //text(x, quitX, quitY, quitWidth, quitHeight);
+  //
+  fontSize = songTitleDivHeight*harringtonAspectRatio;
+  textFont(appFont, fontSize);
+  while ( songTitleDivWidth < textWidth( playListMetaData[currentSong].title() ) ) { //decrease font
+    //exit();
+    println("here"); //infinte loop, problem with WHILE, similar to draw()
+    //Nothing Else works
+    //
+    fontSize = fontSize*0.99;
+    //Update WHILE Conditional with fontSize
+    textFont(appFont, fontSize);
+  } //End Wrap-Around Notification
+  text(playListMetaData[currentSong].title(), songTitleDivX, songTitleDivY, songTitleDivWidth, songTitleDivHeight);
+  //
+  //Note: not Meta Data, normal function of Minim
+  fontSize = songPositionDivHeight*harringtonAspectRatio;
+  textFont(appFont, fontSize);
+  while ( songPositionDivWidth < textWidth( Integer.toString( playList[currentSong].position() ) ) ) { //decrease font
+    //exit();
+    println("here"); //infinte loop, problem with WHILE, similar to draw()
+    //Nothing Else works
+    //
+    fontSize = fontSize*0.99;
+    //Update WHILE Conditional with fontSize
+    textFont(appFont, fontSize);
+  } //End Wrap-Around Notification
+  text(Integer.toString( playList[currentSong].position() ), songPositionDivX, songPositionDivY, songPositionDivWidth, songPositionDivHeight);
+  //
+  //Note: not Meta Data, normal function of Minim
+  fontSize = timeRemainingDivHeight*harringtonAspectRatio;
+  textFont(appFont, fontSize);
+  while ( timeRemainingDivWidth < textWidth( Integer.toString( playList[currentSong].position() - playList[currentSong].position() ) ) ) { //decrease font
+    //exit();
+    println("here"); //infinte loop, problem with WHILE, similar to draw()
+    //Nothing Else works
+    //
+    fontSize = fontSize*0.99;
+    //Update WHILE Conditional with fontSize
+    textFont(appFont, fontSize);
+  } //End Wrap-Around Notification
+  text(Integer.toString( playList[currentSong].length() - playList[currentSong].position() ), timeRemainingDivX, timeRemainingDivY, timeRemainingDivWidth, timeRemainingDivHeight);
+  //
+  //Note: using Meta Data, not Array Function
+  fontSize = totalTimeDivHeight*harringtonAspectRatio;
+  textFont(appFont, fontSize);
+  while ( totalTimeDivWidth < textWidth( Integer.toString( playList[currentSong].length() - playList[currentSong].position() ) ) ) { //decrease font
+    //exit();
+    println("here"); //infinte loop, problem with WHILE, similar to draw()
+    //Nothing Else works
+    //
+    fontSize = fontSize*0.99;
+    //Update WHILE Conditional with fontSize
+    textFont(appFont, fontSize);
+  } //End Wrap-Around Notification
+  text(Integer.toString( playListMetaData[currentSong].length()/1000 ), totalTimeDivX, totalTimeDivY, totalTimeDivWidth, totalTimeDivHeight);
+  //
   fill(whiteInk);
   //
 } //End setup
 //
 void draw() {
-  textAlign(CENTER, CENTER);
+  //Changeable drawings: Current Song Position
+  rect(songPositionDivX, songPositionDivY, songPositionDivWidth, songPositionDivHeight);
+  fontSize = songPositionDivHeight*harringtonAspectRatio;
   textFont(appFont, fontSize);
+  while ( songPositionDivWidth < textWidth( Integer.toString( playList[currentSong].position() ) ) ) { //decrease font
+    //exit();
+    println("here"); //infinte loop, problem with WHILE, similar to draw()
+    //Nothing Else works
+    //
+    fontSize = fontSize*0.99;
+    //Update WHILE Conditional with fontSize
+    textFont(appFont, fontSize);
+  } //End Wrap-Around Notification
   fill(purpleInk);
-  text(x, quitX, quitY, quitWidth, quitHeight);
+  text(Integer.toString( playList[currentSong].position()/1000 ), songPositionDivX, songPositionDivY, songPositionDivWidth, songPositionDivHeight);
   fill(whiteInk);
+  //
+  //Changeable drawings: Current Song Time Remaining (Is a Meta Data or Array Data)
+  rect(timeRemainingDivX, timeRemainingDivY, timeRemainingDivWidth, timeRemainingDivHeight);
+  fontSize = timeRemainingDivHeight*harringtonAspectRatio;
+  textFont(appFont, fontSize);
+  while ( timeRemainingDivWidth < textWidth( Integer.toString( playList[currentSong].position() - playList[currentSong].position() ) ) ) { //decrease font
+    //exit();
+    println("here"); //infinte loop, problem with WHILE, similar to draw()
+    //Nothing Else works
+    //
+    fontSize = fontSize*0.99;
+    //Update WHILE Conditional with fontSize
+    textFont(appFont, fontSize);
+  } //End Wrap-Around Notification
+  fill(purpleInk);
+  text(Integer.toString( (playList[currentSong].length() - playList[currentSong].position())/1000 ), timeRemainingDivX, timeRemainingDivY, timeRemainingDivWidth, timeRemainingDivHeight);
+  fill(whiteInk);
+  //
 } //End draw
 //
 void mousePressed() {
