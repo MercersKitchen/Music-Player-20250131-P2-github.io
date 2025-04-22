@@ -48,7 +48,7 @@ PFont appFont;
 float fontSize;
 float harringtonAspectRatio = 1.04 *0.7; //unknown ratio for QuitButton
 color purpleInk=#2C08FF, whiteInk=#FFFFFF;
-;
+//
 String x = "X";
 //
 void setup() {
