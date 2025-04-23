@@ -33,7 +33,7 @@ fontSize = titleHeight+3; //Extra Valye "Cuts the Mullet OFF"
 
 
 CONTINUE with the Mullet tomorrow
-
+Math first, then draw the text
 
 
 
