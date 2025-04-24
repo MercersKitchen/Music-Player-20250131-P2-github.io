@@ -29,14 +29,15 @@ titleHeight = appHeight*1/10;
 rect(titleX, titleY, titleWidth, titleHeight);
 //
 //Font Size Algorithm
-fontSize = titleHeight+3; //Extra Valye "Cuts the Mullet OFF"
-
-
-CONTINUE with the Mullet tomorrow
-Math first, then draw the text
-
-
-
+float harringtonAspectRatio = 1.04;
+fontSize = titleHeight * harringtonAspectRatio; //Extra Valye "Cuts the Mullet OFF"
+textFont(titleFont, fontSize); //see variable note
+println( textWidth(title), titleWidth );
+while ( textWidth(title) > titleWidth  ) {
+  fontSize = fontSize * 0.99;
+  textFont(titleFont, fontSize); //see variable note
+  println( "Step:", textWidth(title), titleWidth );
+}
 //
 color purpleInk = #2C08FF;
 fill(purpleInk); //Ink, hexidecimal copied from Color Selector
