@@ -15,7 +15,6 @@ int currentSong = numberOfSongs - numberOfSongs; //ZERO
 //
 PFont appFont;
 float fontSize;
-String title = "Wahoo! Mullets are Awesome.";
 //
 float titleX, titleY, titleWidth, titleHeight;
 //
@@ -26,6 +25,24 @@ void setup() {
   int appWidth = width; //displayWidth
   int appHeight = height; //displayHeight
   int shorterSide = ( appWidth >= appHeight ) ? appHeight : appWidth ; //Landscape, Portrait, & Square
+  //
+  minim = new Minim(this);
+  String musicPathway = "Music/";
+  //Note: Download music and sound effects, then design your player with images, text, and 2D shapes
+  //See Google Search: Atari pong logo free image download
+  String song = "groove";
+  //Add all files, CS20 Review is special OS Java Library
+  //Including the reading of the number of files in the array
+  String fileExtension_mp3 = ".mp3";
+  //
+  String musicDirectory = "../../../../" + musicPathway;
+  String file = musicDirectory + song + fileExtension_mp3; //relative pathway or directory
+  println( file );
+  //Create a FOR loop to loadFile() a changing songName
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
+  //Music Testing
+  playList[currentSong].play();
   //
   /*Fonts from OS
    println("Start of Console");
@@ -49,11 +66,11 @@ void setup() {
   float harringtonAspectRatio = 1.04; //AR = fontSize / rect(Height), unique for each font
   fontSize = titleHeight * harringtonAspectRatio; //Extra Value "Cuts the Mullet OFF"
   textFont(appFont, fontSize); //see variable note
-  println( textWidth(title), titleWidth );
-  while ( textWidth(title) > titleWidth  ) {
+  println( textWidth( playListMetaData[currentSong].title() ), titleWidth );
+  while ( textWidth( playListMetaData[currentSong].title() ) > titleWidth  ) {
     fontSize = fontSize * 0.99;
     textFont(appFont, fontSize); //see variable note
-    println( "Step:", textWidth(title), titleWidth );
+    println( "Step:", textWidth( playListMetaData[currentSong].title() ), titleWidth );
   }
   //
   //Code before Drawing Text
@@ -64,7 +81,7 @@ void setup() {
   textFont(appFont, fontSize); //see variable note
   //textFont() has option to combine font declaration with textSize()
   //Drawing Text
-  text(title, titleX, titleY, titleWidth, titleHeight);
+  text( playListMetaData[currentSong].title() , titleX, titleY, titleWidth, titleHeight);
   color whiteInk = #FFFFFF;
   fill(whiteInk); //reset
   //
